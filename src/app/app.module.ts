@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './Register';
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoginComponent} from './Login';
+import { AppRoutingModule } from './app-routing.module';
+import { DisplayComponent } from './display/display.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
 
@@ -14,7 +17,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ const appRoutes: Routes = [
       appRoutes,
       {enableTracing: true}
     ),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
