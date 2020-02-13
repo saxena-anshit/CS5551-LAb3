@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RegisterComponent} from './Register';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CS5551-LAb3';
+  title = 'CS5551-Lab3';
 }
