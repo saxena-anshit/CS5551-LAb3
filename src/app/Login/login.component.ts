@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
   group: FormGroup;
 
   constructor(private builder: FormBuilder) { }
+  username;
+  password;
 
   ngOnInit(): void {
     this.group = this.builder.group({
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  getValues() { return this.builder.control }
+  getValues() { return this.builder.control; }
 
   submitForm() {
     if (this.group.invalid) {
