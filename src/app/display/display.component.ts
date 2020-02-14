@@ -12,7 +12,7 @@ export class DisplayComponent implements OnInit {
   servingWeight: number;
   food: null;
   result;
-  result2;
+  audio;
   constructor(private anyname: HttpClient) {
   }
 
@@ -29,8 +29,8 @@ export class DisplayComponent implements OnInit {
           this.result = result;
           this.calorieAmount = this.result.hits[0].fields.nf_calories;
           this.servingWeight = this.result.hits[0].fields.nf_serving_weight_grams;
-          this.result2 = 'http://api.voicerss.org/?key=386cda37d86f4ea3a22ad8ad860a4165&hl=en-us&src=' + this.food;
-          console.log(this.result2);
+          this.audio = 'http://api.voicerss.org/?key=ade47324fca4489d9bc43643a6e2a2cf&hl=en-us&src=' + this.food;
+          console.log(this.audio);
         });
     }
   }
