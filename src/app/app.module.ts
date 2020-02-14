@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './Register';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LoginComponent} from './Login';
 import { AppRoutingModule } from './app-routing.module';
 import { DisplayComponent } from './display/display.component';
@@ -20,16 +20,17 @@ const appRoutes: Routes = [
     LoginComponent,
     DisplayComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      {enableTracing: true}
-    ),
-    ReactiveFormsModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(
+            appRoutes,
+            {enableTracing: true}
+        ),
+        ReactiveFormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

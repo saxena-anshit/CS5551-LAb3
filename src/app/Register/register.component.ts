@@ -8,9 +8,9 @@ export class RegisterComponent implements OnInit {
   group: FormGroup;
 
   constructor(private builder: FormBuilder, private router: Router) {  }
-  fname;
-  uname;
-  pass;
+  afasfname;
+  afasuname;
+  afaspass;
 
   ngOnInit(): void {
     // set up form
@@ -26,9 +26,9 @@ export class RegisterComponent implements OnInit {
   // on submit function
   submitForm() {
     if (localStorage) {
-      localStorage.setItem('fullname', this.fname);
-      localStorage.setItem('username', this.uname);
-      localStorage.setItem('password', this.pass);
+      localStorage.setItem('fullname', this.afasfname);
+      localStorage.setItem('username', this.afasuname);
+      localStorage.setItem('password', this.afaspass);
       this.router.navigate(['/Login']);
     } else if (this.group.invalid) {
       alert('Please fill in all values');

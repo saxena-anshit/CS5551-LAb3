@@ -1,16 +1,20 @@
-
 <h1>Calorie Search</h1>
 
 <div class="col-md-5 form-group">
   <h4 class="form-text">Food Type</h4>
-  <input #food_type (keyup)="0" type="text" class="form-control-lg" placeholder="whole chicken">
+  <input #food_type (keyup)="0" type="text" class="form-control-lg" [(ngModel)]="food" placeholder="whole chicken">
   <button (click)="getFetchData(food_type.value)" type="button"
           class="btn btn-dark margin-top form-control-lg">Button
   </button>
 </div>
 <div class="col-md-2 form-group">
   <h2>Calorie Amount</h2>
-  <h6> {{ calorieAmount }} kCal</h6>
+  <h6> {{ calorieAmount }} Cal</h6>
   <h2>Serving Weight</h2>
-  <h6> {{ servingWeight }} kCal</h6>
+  <h6> {{ servingWeight }} grams</h6>
+</div>
+<div>
+  <audio controls>
+    <source src="{{result2}}" type="audio/wav">
+  </audio>
 </div>
