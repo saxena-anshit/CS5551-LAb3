@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
+  private calorieAmount: number;
+  private servingWeight: number;
   constructor() { }
 
   ngOnInit() {
+    this.calorieAmount = 2.0;
+    this.servingWeight = 3.0;
+  }
+
+  getFetchData(text: string) {
+    if (text === '') {
+      alert('Please enter a food to search');
+    }
+
   }
 
 }
