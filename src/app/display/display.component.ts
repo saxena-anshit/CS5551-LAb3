@@ -33,7 +33,6 @@ export class DisplayComponent implements OnInit {
     }
   }
   getFetchData(text: string) {
-    this.audio = 'http://api.voicerss.org/?key=ade47324fca4489d9bc43643a6e2a2cf&hl=en-us&src=' + this.food;
     if (text) {
       this.getNutrition();
     }

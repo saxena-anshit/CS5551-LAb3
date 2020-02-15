@@ -14,6 +14,7 @@
 </nav>
 
 <body>
+
 <div class="container">
     <div class="col-lg-5 mx-auto">
       <div class="card card-signin my-5">
@@ -23,23 +24,18 @@
             <h4 class="form-text text-center mt-2">Food Type</h4>
             <input #food_type (keyup)="0" type="text" class="form-control-lg text-center" [(ngModel)]="food" placeholder="whole chicken">
             <button (click)="getFetchData(food_type.value)" type="button"
-                    class="btn btn-dark margin-top form-control-lg mt-2">Button
+                    class="btn btn-primary ml-2">Button
             </button>
+            <button onClick="talk()" type="button" class="btn btn-secondary ml-2">Read it!</button>
           </div>
           <div class="form-group text-center">
             <h4>First result:</h4>
-            <h6> {{ foodDisplayName }}</h6>
+            <h6 id="food-desc"> {{ foodDisplayName }}</h6>
             <h4>Calorie Amount</h4>
             <h6> {{ calorieAmount }} Cal</h6>
             <h4>Serving Weight</h4>
             <h6> {{ servingWeight }} grams</h6>
           </div>
-          <div class="text-center">
-            <audio controls>
-              <source src="{{ audio }}" type="audio/wav">
-            </audio>
-          </div>
-
         </div>
       </div>
     </div>
