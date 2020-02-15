@@ -7,21 +7,19 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
+  constructor(private anyname: HttpClient) {
+  }
 
   calorieAmount: number;
   servingWeight: number;
   foodDisplayName: string;
   food: null;
   result;
-  audio;
-  constructor(private anyname: HttpClient) {
-  }
-
+  audio: any;
   ngOnInit() {
     this.calorieAmount = 0.0;
     this.servingWeight = 0.0;
   }
-
   getNutrition() {
     if ((this.food != null)) {
       this.anyname.get('https://api.nutritionix.com/v1_1/search/' +
@@ -31,12 +29,11 @@ export class DisplayComponent implements OnInit {
           this.foodDisplayName = this.result.hits[0].fields.item_name;
           this.calorieAmount = this.result.hits[0].fields.nf_calories;
           this.servingWeight = this.result.hits[0].fields.nf_serving_weight_grams;
-          this.audio = 'http://api.voicerss.org/?key=ade47324fca4489d9bc43643a6e2a2cf&hl=en-us&src=' + this.food;
-          console.log(this.audio);
         });
     }
   }
   getFetchData(text: string) {
+    this.audio = 'http://api.voicerss.org/?key=ade47324fca4489d9bc43643a6e2a2cf&hl=en-us&src=' + this.food;
     if (text) {
       this.getNutrition();
     }
