@@ -23,7 +23,6 @@ export class RegisterComponent implements OnInit {
   }
   getValues() { return this.builder.control; }
 
-  // on submit function
   submitForm() {
     if (localStorage) {
       localStorage.setItem('fullname', this.afasfname);
@@ -34,8 +33,5 @@ export class RegisterComponent implements OnInit {
       alert('Please fill in all values');
       return;
     }
-
-    // do submit action
   }
-
 }

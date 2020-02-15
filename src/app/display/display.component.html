@@ -1,20 +1,50 @@
-<h1>Calorie Search</h1>
-
-<div class="col-md-5 form-group">
-  <h4 class="form-text">Food Type</h4>
-  <input #food_type (keyup)="0" type="text" class="form-control-lg" [(ngModel)]="food" placeholder="whole chicken">
-  <button (click)="getFetchData(food_type.value)" type="button"
-          class="btn btn-dark margin-top form-control-lg">Button
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Calorie Search</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
   </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/Login">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<body>
+<div class="container">
+    <div class="col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Search for Calories</h5>
+          <div class="form-group text-center mt-2">
+            <h4 class="form-text text-center mt-2">Food Type</h4>
+            <input #food_type (keyup)="0" type="text" class="form-control-lg text-center" [(ngModel)]="food" placeholder="whole chicken">
+            <button (click)="getFetchData(food_type.value)" type="button"
+                    class="btn btn-dark margin-top form-control-lg mt-2">Button
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <h4>First result:</h4>
+            <h6> {{ foodDisplayName }}</h6>
+            <h4>Calorie Amount</h4>
+            <h6> {{ calorieAmount }} Cal</h6>
+            <h4>Serving Weight</h4>
+            <h6> {{ servingWeight }} grams</h6>
+          </div>
+          <div class="text-center">
+            <audio controls>
+              <source src="{{ audio }}" type="audio/wav">
+            </audio>
+          </div>
+
+        </div>
+      </div>
+    </div>
 </div>
-<div class="col-md-2 form-group">
-  <h2>Calorie Amount</h2>
-  <h6> {{ calorieAmount }} Cal</h6>
-  <h2>Serving Weight</h2>
-  <h6> {{ servingWeight }} grams</h6>
-</div>
-<div>
-  <audio controls>
-      <source src="{{ audio }}" type="audio/wav">
-  </audio>
-</div>
+</body>
+
+
+

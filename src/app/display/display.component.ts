@@ -10,6 +10,7 @@ export class DisplayComponent implements OnInit {
 
   calorieAmount: number;
   servingWeight: number;
+  foodDisplayName: string;
   food: null;
   result;
   audio;
@@ -27,6 +28,7 @@ export class DisplayComponent implements OnInit {
         this.food + '?results=0:1&fields=*&appId=9401e382&appKey=2a2056e203d636016e2756e125fdc9f8')
         .subscribe((result) => {
           this.result = result;
+          this.foodDisplayName = this.result.hits[0].fields.item_name;
           this.calorieAmount = this.result.hits[0].fields.nf_calories;
           this.servingWeight = this.result.hits[0].fields.nf_serving_weight_grams;
           this.audio = 'http://api.voicerss.org/?key=ade47324fca4489d9bc43643a6e2a2cf&hl=en-us&src=' + this.food;

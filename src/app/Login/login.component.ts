@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
       this.afaspass = localStorage.getItem('password');
       if (this.afasusername === this.afasuname && this.afaspassword === this.afaspass) {
         this.router.navigate(['/display']);
-      } else if (this.group.invalid) {
-        alert('Please fill in all values');
         return;
       }
     }
@@ -42,7 +40,5 @@ export class LoginComponent implements OnInit {
       alert('Please fill in all values');
       return;
     }
-
-    // do login action
   }
 }

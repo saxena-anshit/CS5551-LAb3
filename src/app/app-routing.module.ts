@@ -6,7 +6,7 @@ import {RegisterComponent} from './Register';
 import {DisplayComponent} from './display/display.component';
 
 const appR: Routes = [
-  { path: '', redirectTo: '/display', pathMatch: 'full'},
+  { path: '', redirectTo: '/Login', pathMatch: 'full'},
   { path: 'Login', component: LoginComponent },
   { path: 'Register', component: RegisterComponent },
   { path: 'display', component: DisplayComponent }
